@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const connectionString = process.env.MONGODB_URI || ///////NEEDS DIFF VAL////'mongodb://localhost:27017/citieslib';
+const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/articleslib';
 
 const configOptions = {
   useNewUrlParser: true,
@@ -15,6 +15,6 @@ mongoose.connect(connectionString, configOptions)
 
   // added the Article property with the .Article because we are no longer using an embedded schema
 module.exports = {
-  Article: require ('./Article').Article,
+  Article: require ('./Article'),
   User: require('./User')
 };

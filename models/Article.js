@@ -7,7 +7,6 @@ const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
   title: String,
-  subtitle: String,
   author: String,
   images: [],
   content: String,
@@ -19,4 +18,4 @@ const ArticleSchema = new Schema({
 
 const Article = mongoose.model('Article', ArticleSchema);
 
-module.exports = { Article } 
+module.exports = Article
