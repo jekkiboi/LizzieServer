@@ -11,7 +11,6 @@ router.post('/', async (req,res) => {
     //Two ways of doing a Mongoose Call
     //1. Callback mathod
     //db.User.fondOne({}, (err, foundUser) => {
-
     //})
 
     //2. async / await
@@ -23,7 +22,6 @@ router.post('/', async (req,res) => {
         const newlyCreatedUser = await db.User.create({ auth0Id: id })
         console.log(newlyCreatedUser)
     }
-
     //Find if a user exists with this auth0Id
     //Create User if doesn't exist
     res.json ({msg: "O hi, thanks for visiting the /auth route!"})
