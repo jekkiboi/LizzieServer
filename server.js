@@ -1,14 +1,34 @@
-// imports
+//Newimports
+require("dotenv").config();
+require('./models')
 const express = require("express");
+const rowdy = require("rowdy-logger");
 const cors = require("cors");
 const session = require("express-session");
 const port = process.env.PORT || 4000;
 const app = express();
 const articlesController = require("./controllers/articlesController");
-const rowdy = require("rowdy-logger");
+
 const rowdyResults = rowdy.begin(app);
-const db = require('./models')
-require("dotenv").config();
+
+
+//App Variables
+
+
+////////////////Old imports////////////////
+// require("dotenv").config();
+// const db = require('./models')
+// const express = require("express");
+// const cors = require("cors");
+// const session = require("express-session");
+// const port = process.env.PORT || 4000;
+// const app = express();
+// const articlesController = require("./controllers/articlesController");
+// const rowdy = require("rowdy-logger");
+// const rowdyResults = rowdy.begin(app);
+///////////End Old Imports/////////////
+
+
 
 // middleware
 // Add a list of allowed origins.
@@ -85,11 +105,9 @@ app.get("/logout", (req, res) => {
 app.use("/api/articles", articlesController);
 
 
-
 //listen
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
     rowdyResults.print();
-  });
-
+});
 

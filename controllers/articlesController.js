@@ -1,21 +1,15 @@
 const router = require('express').Router();
 const db = require('../models');
 
-
 // BASE ROUTE - /api/articles
-
 // actual route - GET /api/articles
 //return data for all articles
 
 router.get('/', (req, res) => {
   db.Article.find({}, (err, foundArticles) => {
     console.log('hello from get')
-
     console.log(foundArticles)
-
     if (err) return console.log(err);
-
-    
     res.json(foundArticles);
   });
 });
@@ -25,7 +19,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   db.Article.findById(req.params.id, (err, foundArticle) => {
       console.log('hello from one article')
-    if (err) return console.log(err);
+      if (err) return console.log(err);
     
     res.json(foundArticle);
     
@@ -35,9 +29,9 @@ router.get('/:id', (req, res) => {
 
 // actual route - POST /api/articles
 router.post('/', (req, res) => {
-  
   db.Article.create(req.body, (err, savedArticle) => {
-      console.log('hello from post')
+    console.log(req.body)  
+    console.log('hello from post')
     if (err) return console.log(err);
     
     res.json(savedArticle);
