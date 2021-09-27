@@ -31,6 +31,9 @@
     "jwks-rsa": "^2.0.4",
     "mongoose": "^6.0.6",
     "morgan": "^1.10.0",
-    "rowdy-logger": "^1.0.2"
+    "react-native": "^0.65.1",
+    "react-share": "^4.4.0",
+    "rowdy-logger": "^1.0.2",
+    "semantic-ui-react": "^2.0.4"
   }
 }

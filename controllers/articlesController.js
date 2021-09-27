@@ -29,8 +29,13 @@ router.get('/:id', (req, res) => {
 
 // actual route - POST /api/articles
 router.post('/', (req, res) => {
-  db.Article.create(req.body, (err, savedArticle) => {
-    console.log(req.body)  
+  const newArticle = {
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image ? req.body.image : req.body.imageupload
+  }
+  db.Article.create(newArticle, (err, savedArticle) => {
+    console.log(newArticle)  
     console.log('hello from post')
     if (err) return console.log(err);
     

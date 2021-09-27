@@ -10,6 +10,7 @@ const ArticleSchema = new Schema({
   title: String,
 content: String,
   image: String
+  // imageupload: String,
 
 })
 
