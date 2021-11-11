@@ -9,7 +9,7 @@ const checkJwt = jwt({
       jwksRequestsPerMinute: 5,
       jwksUri: 'https://dev-w78xv6-p.us.auth0.com/.well-known/jwks.json'
     }),
-  
+    
     // Validate the audience and the issuer
     audience: 'http://localhost:8000', //replace with your API's audience, available at Dashboard > APIs
     issuer: 'https://dev-w78xv6-p.us.auth0.com/',

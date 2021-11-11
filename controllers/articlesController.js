@@ -2,30 +2,23 @@ const router = require('express').Router();
 const db = require('../models');
 
 // BASE ROUTE - /api/articles
-// actual route - GET /api/articles
-//return data for all articles
+// Actual route - GET /api/articles
+//Return data for all articles
 
 router.get('/', (req, res) => {
   db.Article.find({}, (err, foundArticles) => {
-    console.log('hello from get')
-    console.log(foundArticles)
     if (err) return console.log(err);
     res.json(foundArticles);
   });
 });
 
-
 // actual route - GET /api/articles/:id
 router.get('/:id', (req, res) => {
   db.Article.findById(req.params.id, (err, foundArticle) => {
-      console.log('hello from one article')
       if (err) return console.log(err);
-    
     res.json(foundArticle);
-    
   });
 });
-
 
 // actual route - POST /api/articles
 router.post('/', (req, res) => {
@@ -43,7 +36,6 @@ router.post('/', (req, res) => {
   });
 });
 
-
 // actual route - PUT /api/articles/:id
 router.put('/:id', (req, res) => {
   db.Article.findByIdAndUpdate(
@@ -57,7 +49,6 @@ router.put('/:id', (req, res) => {
     });
 });
 
-
 // actual route - DELETE /api/articles/:id
 router.delete('/:id', (req, res) => {
   console.log('delete route')
@@ -66,6 +57,5 @@ router.delete('/:id', (req, res) => {
     res.json({ messaage:'Successful deletion' });
   });
 });
-
 
 module.exports = router;
