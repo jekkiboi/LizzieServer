@@ -11,7 +11,7 @@ const checkJwt = jwt({
     }),
     
     // Validate the audience and the issuer
-    audience: 'https://lizzieserver.herokuapp.com/', //used to say 'http://localhost:8000', //replace with your API's audience, available at Dashboard > APIs
+    audience: 'http://localhost:8000', //replace with your API's audience, available at Dashboard > APIs
     issuer: 'https://dev-w78xv6-p.us.auth0.com/',
     algorithms: [ 'RS256' ]
   });

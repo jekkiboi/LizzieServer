@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/oauthBoilerplate'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/oauthBoilerplate'
 
-mongoose.connect(MONGO_URI, {
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 })
 
 const db = mongoose.connection
@@ -11,7 +11,7 @@ db.once('open', () => {
     console.log(`⛓️ MongoDB connected @ ${db.host}:${db.port}`)
 })
 db.on('error', err => {
-    console.error(err)
+    console.error("Could not connect to Mongo DB!",err)
 })
 module.exports = {
   Article: require ('./Article'),
