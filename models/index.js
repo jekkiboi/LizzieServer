@@ -8,7 +8,7 @@ mongoose.connect(MONGODB_URI, {
 
 const db = mongoose.connection
 db.once('open', () => {
-    console.log(`⛓️ MongoDB connected @ ${db.host}:${db.port}`)
+    console.log(`⛓️ Mongoose connected @ ${db.host}:${db.port}`)
 })
 db.on('error', err => {
     console.error("Could not connect to Mongo DB!",err)

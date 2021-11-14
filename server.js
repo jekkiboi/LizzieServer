@@ -11,7 +11,6 @@ const cors = require("cors")
 const PORT = process.env.PORT || 8000 //changed from 4000 to 8000
 const app = express();
 const rowdyResults = rowdy.begin(app);
-/////??not sure if we need this???/////
 const articlesController = require("./controllers/articlesController");
 ///////////End New Imports/////////////////////////////
 
